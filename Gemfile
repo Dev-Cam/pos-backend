@@ -50,3 +50,5 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+gem "pry-rails"
+
