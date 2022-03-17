@@ -1,0 +1,2 @@
+class TableOrdersController < ApplicationController
+end
