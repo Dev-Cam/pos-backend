@@ -1,48 +1,4 @@
-Drink.destroy_all
-print 'creating drinks .....'
 
-d1 = Drink.create!(
-  name: "Coffee",
-  price: 4,
-  quantity: 10
-)
-
-d2 = Drink.create!(
-  name: "Tea",
-  price: 3.5,
-  quantity: 15
-)
-
-d3 = Drink.create!(
-  name: "Orange Juice",
-  price: 7,
-  quantity: 6
-)
-
-puts "created #{Drink.count } drinks."
-
-Food.destroy_all
-print 'creating food items .....'
-
-f1 = Food.create!(
-  name: "burger",
-  price: 14,
-  quantity: 10
-)
-
-f2 = Food.create!(
-  name: "Pasta",
-  price: 35,
-  quantity: 15
-)
-
-f3 = Food.create!(
-  name: "Garlic Bread",
-  price: 7,
-  quantity: 6
-)
-
-puts "created #{Food.count } food items."
 
 Server.destroy_all
 print 'creating Servers .....'
@@ -97,3 +53,49 @@ t6 = Table.create!(
 puts "created #{Table.count } tables."
 
 
+MenuItem.destroy_all
+print "Creating menu items ....."
+
+mi1 = MenuItem.create!(
+  name: "Coffee",
+  price: 4,
+  stock_qty: 50,
+  category: 1
+)
+
+mi2 = MenuItem.create!(
+  name: "Tea",
+  price: 4,
+  stock_qty: 30,
+  category: 1
+)
+
+mi3 = MenuItem.create!(
+  name: "Orange Juice",
+  price: 7,
+  stock_qty: 6,
+  category: 1
+)
+
+mi4 = MenuItem.create!(
+  name: "burger",
+  price: 14,
+  stock_qty: 10,
+  category: 0
+)
+
+mi5 = MenuItem.create!(
+  name: "Garlic Bread",
+  price: 7,
+  stock_qty: 6,
+  category: 0
+)
+
+mi6 = MenuItem.create!(
+  name: "Pasta",
+  price: 35,
+  stock_qty: 15,
+  category: 0
+)
+
+puts "created #{MenuItem.count } menu items."
