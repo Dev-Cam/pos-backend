@@ -10,26 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_18_000848) do
+ActiveRecord::Schema.define(version: 2022_03_18_084637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "drinks", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.integer "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "foods", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.integer "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "line_items", force: :cascade do |t|
     t.integer "quantity"
@@ -37,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_03_18_000848) do
     t.integer "menu_item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "server_name"
   end
 
   create_table "menu_items", force: :cascade do |t|
@@ -57,9 +42,10 @@ ActiveRecord::Schema.define(version: 2022_03_18_000848) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "tableId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "table_id"
+    t.integer "status"
   end
 
   create_table "servers", force: :cascade do |t|
@@ -75,6 +61,7 @@ ActiveRecord::Schema.define(version: 2022_03_18_000848) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "server_id"
+    t.integer "order_id"
   end
 
 end
