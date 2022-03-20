@@ -5,7 +5,7 @@ class LineItemsController < ApplicationController
   end 
 
   def create
-    order = Order.table_id.find_by status: 'pending'
+    order = Order.find_by status: 'pending'
 
     if order == nil
       order = Order.create(
